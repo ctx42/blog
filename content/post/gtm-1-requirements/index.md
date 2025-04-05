@@ -12,7 +12,7 @@ links:
   - title: Testing Module on GitHub
     description: Repository with my work associated with this post.
     website: https://github.com/ctx42/testing
-    image: img/github-logo.png
+    image: /img/github-logo.png
 weight: 1
 ---
 

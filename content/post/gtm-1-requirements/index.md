@@ -25,7 +25,8 @@ I’ve always admired Go for its simplicity and readability — at least in most
 
 ```go  
 if want != have {  
-    t.Errorf("expected %v, but got %v", want, have)}  
+    t.Errorf("expected %v, but got %v", want, have)
+}  
 ```  
 
 It works, but it’s verbose and repetitive. In my view, tests become much more readable when you use assertion functions. They cut through the noise and let the intent shine through.

@@ -22,3 +22,11 @@ url = "https://x.com/context42"
 
 [social.params]
 icon = "brand-twitter"
+
+[[social]]
+identifier = "rss"
+name = "RSS"
+url = "index.xml"
+
+[social.params]
+icon = "rss"

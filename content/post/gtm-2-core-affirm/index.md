@@ -1,5 +1,5 @@
 ---
-title: "Crafting Go Testing Module: Step 2 - Core"
+title: "Crafting Testing Module: Step 2 - Core"
 description: In this second installment, we dive into the implementation of my Go Testing Module, starting with the foundational core and affirm packages to bootstrap readable tests for the package itself.
 date: 2025-04-09
 image: cover.jpg
@@ -20,7 +20,7 @@ Welcome back to my series on building a Go Testing Module from scratch! In the [
 
 > Follow Testing Module development on [GitHub](https://github.com/ctx42/testing)
 
-<!--more-->  
+<!--more-->
 
 ## The Chicken-and-Egg Problem
 
@@ -73,4 +73,4 @@ This keeps it simple but effective. Unlike the eventual `assert` package, `affir
 ## Closing Thoughts
 This post marks the first real step into coding my Go Testing Module. Starting with `core` and `affirm` packages solves the chicken-and-egg problem, giving me a foothold to write readable tests for the bigger features ahead - like the `assert` package, mocking, and golden files. It’s not glamorous, but it’s foundational, and I’m excited to see it take shape. In the next post, I’ll dive into how I plan to test the `affirm` package, ensuring it’s a solid stepping stone before we expand it further.
 
-I’d love for you to check out the progress on Go Testing Module - head over to the project's [GitHub](https://github.com/ctx42/testing) to see the code and documentation in action. Feedback is always appreciated, whether it’s a suggestion, a bug report, or just your thoughts on the approach. Open an issue on GitHub or drop a message on [X](https://x.com/context42).
+I’d love for you to check out the progress on Go Testing Module - head over to the project's [GitHub repository](https://github.com/ctx42/testing) to see the code and documentation in action. Feedback is always appreciated, whether it’s a suggestion, a bug report, or just your thoughts on the approach. Open an issue on GitHub or drop a message on [X](https://x.com/context42).

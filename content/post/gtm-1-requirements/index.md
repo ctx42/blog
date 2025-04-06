@@ -1,5 +1,5 @@
 ---
-title: "Crafting Go Testing Module: Step 1 - Requirements"
+title: "Crafting Testing Module: Step 1 - Requirements"
 description: Post launches a series where I document my journey of developing a dependency-free Go Testing Module from the ground up.
 date: 2025-04-07
 image: cover.jpg
@@ -20,7 +20,7 @@ This post marks the start of a series where I document my journey of developing 
 
 > Follow Testing Module development on [GitHub](https://github.com/ctx42/testing)
 
-<!--more-->  
+<!--more-->
 
 ## Why?
 I’ve always admired Go for its simplicity and readability - at least in most cases. However, I hold an unpopular opinion: tests written solely with the standard library can be tough to follow. All those `if` statements and manual checks clutter the code and make it harder to understand what’s being tested. For example, here’s a typical assertion using the standard library:
@@ -104,4 +104,4 @@ To wrap things up, I’m adding a `tstkit` package packed with utilities to make
 
 This is just the beginning of my journey to build a Go Testing Module from scratch, and I’m excited to see where it takes me. I’ve laid out the vision - readable tests, no dependencies, and a toolbox that grows with its users - and now it’s time to roll up my sleeves and make it real. Each step will bring its own challenges and trade-offs, and I’ll be sharing them all here as I go. Stick around for the ride! In the next post, we’ll dive into the first real hurdle: designing readable tests for the module itself when the assertion library we need doesn’t exist yet. How do we write clean assertions without the tools we’re building? It’s a classic chicken-and-egg puzzle, and I can’t wait to unpack how we’ll crack it.
 
-I’d love for you to check out the progress on Go Testing Module - head over to the project's [GitHub](https://github.com/ctx42/testing) to see the code and documentation in action. Feedback is always appreciated, whether it’s a suggestion, a bug report, or just your thoughts on the approach. Open an issue on GitHub or drop a message on [X](https://x.com/context42).
+I’d love for you to check out the progress on Go Testing Module - head over to the project's [GitHub](https://github.com/ctx42/testing) to see the code and documentation in action. Feedback is always appreciated, whether it’s a suggestion, a bug report, or just your thoughts on the approach. Open an issue on GitHub or drop a message on X [@context42](https://x.com/context42).

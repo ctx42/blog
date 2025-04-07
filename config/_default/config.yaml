@@ -1,0 +1,17 @@
+# Change baseurl before deploy
+baseurl: https://blog.ctx42.com
+languageCode: en-us
+title: CTX/42
+
+# Theme i18n support.
+defaultContentLanguage: en
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage: false
+
+# Change it to your Disqus shortname before using.
+#disqusShortname: hugo-theme-stack
+
+pagination:
+  pagerSize: 5

@@ -1,0 +1,30 @@
+# Markdown renderer configuration.
+goldmark:
+  renderer:
+    unsafe: true
+  extensions:
+    passthrough:
+      enable: true
+      
+      # LaTeX math support: https://gohugo.io/content-management/mathematics/.
+      delimiters:
+        block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+        inline:
+          - - \(
+            - \)
+tableOfContents:
+  ordered: false
+  startLevel: 2
+  endLevel: 3
+highlight:
+  noClasses: false
+  codeFences: true
+  guessSyntax: true
+  lineNoStart: 1
+  lineNos: true
+  lineNumbersInTable: true
+  tabWidth: 4

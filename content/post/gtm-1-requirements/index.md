@@ -1,7 +1,7 @@
 ---
 title: "Crafting Go Testing Module: Step 1 - Requirements"
 description: Post launches a series where I document my journey of developing a dependency-free Go Testing Module from the ground up.
-date: 2025-04-05T13:34:00+02:00
+date: 2025-04-07
 image: cover.jpg
 categories:
   - testing

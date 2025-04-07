@@ -2,6 +2,7 @@
 baseurl: https://blog.ctx42.com
 languageCode: en-us
 title: CTX/42
+enableGitInfo: true
 
 # Theme i18n support.
 defaultContentLanguage: en

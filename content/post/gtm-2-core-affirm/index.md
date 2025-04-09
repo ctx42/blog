@@ -1,7 +1,7 @@
 ---
 title: "Crafting Go Testing Module: Step 2 - Core"
 description: In this second installment, we dive into the implementation of my Go Testing Module, starting with the foundational core and affirm packages to bootstrap readable tests for the package itself.
-date: 2025-04-06
+date: 2025-04-09
 image: cover.jpg
 categories:
   - testing
@@ -16,6 +16,8 @@ links:
 ---
 
 Welcome back to my series on building a Go Testing Module from scratch! In the [first post](/p/crafting-go-testing-module-step-1-requirements), I shared my vision for this project: a dependency-free, developer-friendly toolkit designed to make writing tests in Go more readable and intuitive. I laid out the key requirements - like robust assertions, clear log  messages, and mocking support - and explained why I’m tackling this, from my gripes with the standard library to my passion for great developer experience (DX). If you haven’t checked it out yet, I’d recommend giving it a read to see where this journey started. Now, in this second part, we’re rolling up our sleeves and diving into the actual work. I’ll walk you through where I’m starting the implementation, breaking down the first steps and the thinking behind them. Let’s get into it!
+
+> Checkout Go Testing Module repository at [GitHub](https://github.com/ctx42/testing)
 
 ## The Chicken-and-Egg Problem
 

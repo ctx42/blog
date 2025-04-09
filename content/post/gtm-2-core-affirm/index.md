@@ -8,6 +8,7 @@ categories:
 tags:
   - testing
   - go
+  - gtm
 links:
   - title: Testing Module on GitHub
     description: Repository with my work associated with this post.
@@ -39,7 +40,7 @@ Let’s break these down and see why they’re essential.
 
 ### IsNil
 Checking for nil in Go isn’t as simple as `want == nil`. Sure, that works for basic types like pointers or interfaces, but Go’s type system throws curveballs. An interface with a nil value and a non-nil type isn’t considered nil by a direct comparison - it’s a subtle gotcha that trips up even seasoned developers. `IsNil` handles this properly by inspecting the underlying value and type, giving us a reliable way to test for "nil-ness" across the board. In tests, this is critical: you need to know definitively whether something’s truly absent or just masquerading as nil. It will be a basis for all assertions that need to check for nil - like `assert.NoError`. For a deeper dive into the quirks of nil checking in Go, check out this great article:
-[Why Golang Nil Is Not Always Nil? Nil Explained](https://codefibershq.com/blog/golang-why-nil-is-not-always-nil). 
+    [Why Golang Nil Is Not Always Nil? Nil Explained](https://codefibershq.com/blog/golang-why-nil-is-not-always-nil). 
 
 ### WillPanic
 Panics are a big deal in testing - you often want to verify that a function does panic under certain conditions (like invalid input) or doesn’t when it shouldn’t. Writing this check by hand with `recover()` is tedious and error-prone, so `WillPanic` wraps it up neatly. It runs the provided function, catches any panic, and returns what value was panicked, and a stack trace for context. This makes it a breeze to assert panic behavior - like ensuring a some call blows up as expected - without cluttering test code with boilerplate. Plus, that stack trace? Gold for debugging when things go sideways.

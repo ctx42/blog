@@ -8,6 +8,7 @@ categories:
 tags:
   - testing
   - go
+  - gtm
 links:
   - title: Testing Module on GitHub
     description: Repository with my work associated with this post.

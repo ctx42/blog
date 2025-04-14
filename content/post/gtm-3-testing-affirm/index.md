@@ -73,7 +73,7 @@ func Test_Equal_failure(t *testing.T) {
 
 Here’s the catch: when `want` doesn't equal `have`, `Equal` calls `t.Errorf`, which marks the test as failed in the real test runner. Even though `Equal` behaved correctly (logging the error and returning false), the test itself fails, masking the fact that we’re verifying the right behavior. This is a classic testing conundrum: how do we test a function that triggers test failures without failing the test?
 
-# A Solution
+## A Solution
 
 At this stage, my Go testing module doesn’t yet have a full-fledged mocking library (that’s coming later - stay tuned!). To test `affirm` helpers, I needed a way to intercept `*testing.T` calls without affecting the actual test runner. That’s where the core package’s `T` interface and `Spy` struct come in. I introduced the `T` interface to capture a subset of `testing.TB` methods used by affirm helpers:
 
@@ -102,7 +102,7 @@ type Spy struct {
 
 With `Spy`, I can track whether an assertion helper called `Error`, `Errorf`, or other methods, and inspect the logged messages when needed — all without failing the actual test.
 
-# Adapting Affirm Helpers
+### Adapting Affirm Helpers
 
 To use `Spy`, I updated affirm helpers to accept `core.T` instead of `*testing.T`. For example, here’s the revised `Nil` helper:
 
@@ -119,7 +119,7 @@ func Nil(t core.T, have any) bool {
 
 This change is subtle but powerful: by using the `core.T` interface, helpers become testable with `Spy` while still working with `*testing.T` in real tests (since `*testing.T` implements `core.T`).
 
-# Writing Tests with Spy
+### Writing Tests with Spy
 
 Now, testing both success and failure cases becomes straightforward. Here’s how I test the `Nil` helper:
 
@@ -161,13 +161,13 @@ The success case verifies that `Nil` returns true for a nil input and doesn’t 
 
 Another benefit is that helpers can call `t.Fatal` or `t.Fatalf` without causing the real test to panic or exit the goroutine, making `Spy` a versatile tool for testing all kinds of assertions.
 
-# Trade-Offs and Reflections
+### Trade-Offs and Reflections
 
 Switching `affirm` helpers to use `core.T` instead of `*testing.T` is a pragmatic choice, but it’s not without trade-offs. On one hand, it makes testing possible without a full mocking framework. On the other, it slightly increases the package’s complexity by introducing an interface. I’m okay with this for now - it’s a small price for testability, and `T` is narrowly scoped to internal packages only.
 Another consideration is `Spy`’s design. It’s minimal, capturing only the essentials (errors, failures, messages), but it’s flexible enough to grow if I add more assertion helpers later. For example, if I introduce helpers that call `Fatal` or `FailNow`, Spy’s `TriggeredFailure` field will already handle them.
 
-# Closing Thoughts
+## Closing Thoughts
 
 Testing the `affirm` package pushed me to think creatively about mocking `*testing.T`, and I’m thrilled with how `Spy` and `T` turned out. They’re not just tools for testing `affirm` — they’re building blocks for a module that’s as reliable as it is intuitive. This step reinforced my belief that trustworthy tests start with trustworthy tools.
 
-As always, I’d love for you to check out the progress on the [GitHub repository](https://github.com/ctx42/testing). The code and early docs are there - feel free to explore, test it out, or share feedback via an issue. You can also follow updates on X [@context42](https://x.com/context42). Your thoughts help shape this journey, so don’t hold back!
+As always, I’d love for you to check out the progress on the [GitHub repository](https://github.com/ctx42/testing). The code and early docs are there - feel free to explore, test it out, or share feedback via an issue. You can also follow updates on [X](https://x.com/context42). Your thoughts help shape this journey, so don’t hold back!

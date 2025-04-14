@@ -54,8 +54,6 @@ These three functions may seem straightforward, but they play a crucial role in 
 
 Next up is `affirm`, a stepping stone to the full-blown `assert` package I’ll build later. It’s deliberately minimalist, focusing on basic assertions with clean, readable log messages for a narrow set of common cases. Think of it as a starting point: it gives us usable assertions to work with while we build out the full version. Here’s what it includes:
 
-- `func True(t *testing.T, have bool) bool`
-- `func False(t *testing.T, have bool) bool`
 - `func Equal[T comparable](t *testing.T, want, have T) bool`
 - `func DeepEqual(t *testing.T, want, have any) bool`
 - `func Nil(t *testing.T, have any) bool`

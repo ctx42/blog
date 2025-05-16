@@ -1,6 +1,6 @@
 ---
 title: "Crafting Testing Module: Step 4 - Goldy and Must"
-description: "Creating tools to tidy up test cases and build toward a fully featured testing module."
+description: "Creating tools to have readable test cases and build toward a fully featured testing module."
 date: 2025-05-16
 image: cover.jpg
 categories:
